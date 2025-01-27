@@ -39,11 +39,11 @@
 - [x] Configurar el repositorio para despliegue.
 
 ### Estructuración del Contenido
-- [ ] Analizar los diseños en `/design`.
-- [ ] Planificar la estructura HTML.
+- [x] Analizar los diseños en `/design`.
+- [x] Planificar la estructura HTML.
 
 ### Estilos Base
-- [ ] Definir `font-family` y `font-size` en CSS.
+- [x] Definir `font-family` y `font-size` en CSS.
 
 ### Desarrollo del Slider
 - [ ] Implementar HTML del slider.

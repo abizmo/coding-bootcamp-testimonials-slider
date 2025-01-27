@@ -1,0 +1,31 @@
+:root {
+    --clr-dark-blue: 240 38% 20%;
+    --clr-grayish-blue: 240 18% 77%;
+
+    --ff-primary: 'Inter', sans-serif;
+
+    --fs-500: clamp(1.125rem, 0.7624rem + 1.547vw, 2rem);
+    --fs-200: clamp(0.875rem, 0.7196rem + 0.663vw, 1.25rem);
+    --fs-100: 0.6875rem;
+
+    --fw-regular: 300;
+    --fw-medium: 500;
+    --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-regular);
+}
