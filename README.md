@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: []()
-- Live Site URL: []()
+- Solution URL: [https://github.com/abizmo/coding-bootcamp-testimonials-slider](https://github.com/abizmo/coding-bootcamp-testimonials-slider)
+- Live Site URL: [https://coding-bootcamp-testimonials-slider-abizmo.vercel.app/](https://coding-bootcamp-testimonials-slider-abizmo.vercel.app/)
 
 ## My process
 
