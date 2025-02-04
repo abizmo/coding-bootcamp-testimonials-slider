@@ -1,0 +1,27 @@
+---
+const { src, alt, class: classes, ...rest } = Astro.props;
+---
+
+<div class:list={["avatar", classes]} {...rest}>
+  <img src={src} alt={alt} />
+</div>
+
+<style>
+  .avatar {
+    background-image: url(./patterns/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+    padding-inline: clamp(2.25rem, 0.661rem + 6.7797vw, 5rem);
+    width: max-content;
+    aspect-ratio: 697/657;
+
+    & > img {
+      border-radius: 4px;
+      width: clamp(15.875rem, 5.5466rem + 44.0678vw, 33.75rem);
+      aspect-ratio: 1;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    }
+  }
+</style>

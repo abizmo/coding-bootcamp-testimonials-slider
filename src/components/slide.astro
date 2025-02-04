@@ -1,0 +1,96 @@
+---
+const { class: classes, ...rest } = Astro.props;
+---
+
+<li class:list={["slide", classes]} {...rest}>
+  <div class="slide__media">
+    <slot name="slide-media" />
+    <div class="slide__actions">
+      <button class="slide__btn">
+        <img src="./icons/prev.svg" alt="" />
+        <span class="visually-hidden">previous</span>
+      </button>
+      <button class="slide__btn">
+        <img src="./icons/next.svg" alt="" />
+        <span class="visually-hidden">next</span>
+      </button>
+    </div>
+  </div>
+  <div class="slide__content">
+    <slot name="slide-content" />
+  </div>
+</li>
+
+<style>
+  .slide {
+    display: grid;
+    justify-items: center;
+    row-gap: 3.5rem;
+
+    @media (width >= 768px) {
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+
+      & .slide__media {
+        grid-column: 3 / 6;
+        grid-row: 1;
+      }
+
+      & .slide__content {
+        grid-column: 1 / 4;
+        grid-row: 1;
+      }
+    }
+  }
+
+  .slide.hide {
+    display: none;
+  }
+
+  .slide__content {
+    display: grid;
+    gap: clamp(1rem, 0.1333rem + 3.698vw, 2.5rem);
+
+    @media (width < 768px) {
+      justify-items: center;
+    }
+  }
+
+  .slide__media {
+    position: relative;
+  }
+
+  .slide__actions {
+    width: 80px;
+    height: 40px;
+    border-radius: 999rem;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    --translate-y: clamp(-0.6875rem, -0.1508rem + -2.2901vw, -1.25rem);
+    transform: translate(-50%, var(--translate-y));
+
+    @media (width >= 768px) {
+      width: 112px;
+      height: 56px;
+      left: 25%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .slide__btn {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+  }
+</style>

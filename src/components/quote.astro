@@ -1,0 +1,46 @@
+---
+const { class: classes, ...rest } = Astro.props;
+---
+
+<div class:list={["quote", classes]} {...rest}>
+  <img src="./patterns/quotes.svg" alt="" />
+  <q><slot /></q>
+</div>
+
+<style>
+  .quote {
+    position: relative;
+
+    @media (width < 768px) {
+      text-align: center;
+    }
+  }
+
+  img {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: clamp(3.75rem, 1.5832rem + 9.245vw, 7.5rem);
+    height: auto;
+
+    @media (width>=768px) {
+      left: 25%;
+    }
+  }
+
+  q {
+    --space: 0.34em;
+
+    font-size: var(--fs-400);
+    font-weight: 300;
+
+    &::before {
+      margin-right: var(--space);
+    }
+
+    &::after {
+      margin-left: var(--space);
+    }
+  }
+</style>

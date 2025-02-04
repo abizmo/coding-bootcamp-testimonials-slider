@@ -1,11 +1,57 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Slider from "@components/slider.astro";
+import Layout from "@layouts/root.astro";
+import "@styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const slides = [
+  {
+    imageUrl: "./images/tanya.jpg",
+    quote:
+      "I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future.",
+    name: "Tanya Sinclair",
+    job: "UX Engineer",
+  },
+  {
+    imageUrl: "./images/john.jpg",
+    quote:
+      "If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer.",
+    name: "John Tarkpor",
+    job: "Junior Front-end Developer",
+  },
+];
 ---
 
 <Layout>
-	<Welcome />
+  <section class="slider-section">
+    <div class="container">
+      <Slider slides={slides} />
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .container {
+    --px: 1.5rem;
+    width: min(73rem, 100% - (var(--px) * 2));
+    margin-inline: auto;
+  }
+
+  .slider-section {
+    padding-top: 1.5rem;
+    padding-bottom: 5rem;
+
+    background-image: url(./patterns/curve.svg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: auto 5rem;
+
+    @media (width >= 768px) {
+      padding-top: 5rem;
+      background-size: auto 7.5rem;
+    }
+
+    @media (width >= 1024px) {
+      background-size: auto;
+    }
+  }
+</style>

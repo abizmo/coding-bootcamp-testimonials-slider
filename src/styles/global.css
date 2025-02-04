@@ -1,0 +1,50 @@
+:root{
+  --clr-dark: 240 38% 20%;
+  --clr-primary: hsl(var(--clr-dark));
+  --clr-secondary: hsl(240, 18%, 77%);
+  --fs-400: clamp(1.25rem, 0.8166rem + 1.849vw, 2rem);
+  --fs-200: clamp(0.9375rem, 0.7569rem + 0.7704vw, 1.25rem);
+  --fs-100: .875rem;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  line-height: 1.35;
+  color: var(--clr-primary);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

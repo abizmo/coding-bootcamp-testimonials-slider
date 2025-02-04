@@ -1,0 +1,31 @@
+---
+const { name, job, class: classes, ...rest } = Astro.props;
+---
+
+<div class:list={["author", classes]} {...rest}>
+  <h2 class="author__name">{name}</h2>
+  <p class="author__job">{job}</p>
+</div>
+
+<style>
+  .author {
+    font-size: var(--fs-200);
+
+    display: grid;
+    justify-items: center;
+
+    @media (width >= 768px) {
+      grid-template-columns: repeat(2, max-content);
+      gap: 0.5rem;
+    }
+  }
+
+  .author__name {
+    font-weight: 700;
+  }
+
+  .author__job {
+    font-weight: 500;
+    color: var(--clr-secondary);
+  }
+</style>
